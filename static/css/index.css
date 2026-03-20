@@ -1498,6 +1498,13 @@ footer {
     gap: 0.28rem;
   }
 
+  .brand-logo {
+    width: 9rem;
+    padding: 4px 5px;
+    flex: 0 0 auto;
+    object-fit: cover;
+  }
+
   .hero-title,
   .section-title {
     max-width: none;
