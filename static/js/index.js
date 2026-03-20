@@ -18,6 +18,8 @@ const dom = {
 };
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const formEndpoint =
+  "https://script.google.com/macros/s/AKfycbwVzFXcpV9uyCKpou6NsSGhxzghe-C7b0_8LDg0K3h1UfC25gmU6eIEstm6LCXmoy5u/exec";
 
 function getHeaderOffset() {
   return (dom.header?.offsetHeight || 0) + 14;
@@ -136,7 +138,7 @@ function setFormMessage(message, type) {
 function validateContactForm() {
   if (!dom.contactForm) return;
 
-  dom.contactForm.addEventListener("submit", (event) => {
+  dom.contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     clearFieldState();
 
@@ -144,12 +146,14 @@ function validateContactForm() {
     const name = String(formData.get("name") || "").trim();
     const email = String(formData.get("email") || "").trim();
     const phone = String(formData.get("phone") || "").trim();
-    const message = String(formData.get("message") || "").trim();
+    const requirement = String(formData.get("requirement") || "").trim();
 
     const nameField = dom.contactForm.elements.namedItem("name");
     const emailField = dom.contactForm.elements.namedItem("email");
     const phoneField = dom.contactForm.elements.namedItem("phone");
-    const messageField = dom.contactForm.elements.namedItem("message");
+    const requirementField = dom.contactForm.elements.namedItem("requirement");
+    const submitButton = dom.contactForm.querySelector("button[type='submit']");
+    const originalButtonLabel = submitButton?.textContent || "Send Enquiry";
 
     const setError = (field, note) => {
       field?.classList.add("invalid");
@@ -172,13 +176,73 @@ function validateContactForm() {
       return;
     }
 
-    if (message.length < 12) {
-      setError(messageField, "Please add a short requirement summary.");
+    if (requirement.length < 12) {
+      setError(requirementField, "Please add a short requirement summary.");
       return;
     }
 
-    setFormMessage("Message sent successfully. Our team will contact you shortly.", "success");
-    dom.contactForm.reset();
+    try {
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+      }
+
+      setFormMessage("Submitting your enquiry...", "success");
+
+      const response = await fetch(formEndpoint, {
+        method: "POST",
+        mode: "cors",
+        referrerPolicy: "strict-origin-when-cross-origin",
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "text/plain;charset=utf-8",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          requirement,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
+      const raw = await response.text();
+      let data = {};
+
+      if (raw) {
+        try {
+          data = JSON.parse(raw);
+        } catch {
+          data = { success: true };
+        }
+      }
+
+      const ok = data?.success !== false;
+
+      if (!ok) {
+        throw new Error(data?.message || "Submission failed");
+      }
+
+      setFormMessage(
+        "Message sent successfully. Our team will contact you shortly.",
+        "success",
+      );
+      dom.contactForm.reset();
+    } catch (error) {
+      setFormMessage(
+        "Could not send your enquiry right now. Please try again in a moment.",
+        "error",
+      );
+      console.error(error);
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonLabel;
+      }
+    }
   });
 }
 
