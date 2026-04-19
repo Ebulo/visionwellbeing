@@ -3,6 +3,12 @@ const dom = {
   header: document.getElementById("siteHeader"),
   menuToggle: document.getElementById("menuToggle"),
   mainNav: document.getElementById("mainNav"),
+  servicesDropdown: document.getElementById("servicesDropdown"),
+  servicesMenuLink: document.getElementById("servicesMenuLink"),
+  servicesMenuToggle: document.getElementById("servicesMenuToggle"),
+  servicesSubmenu: document.getElementById("servicesSubmenu"),
+  scrollProgress: document.getElementById("scrollProgress"),
+  clientLogoTrack: document.getElementById("clientLogoTrack"),
   backToTop: document.getElementById("backToTop"),
   contactForm: document.getElementById("contactForm"),
   formNote: document.getElementById("formNote"),
@@ -11,15 +17,74 @@ const dom = {
   lightboxCaption: document.getElementById("lightboxCaption"),
   lightboxClose: document.getElementById("lightboxClose"),
   year: document.getElementById("year"),
-  navLinks: Array.from(document.querySelectorAll(".main-nav a")),
+  navLinks: Array.from(document.querySelectorAll(".main-nav a[href^='#']")),
   sections: Array.from(document.querySelectorAll("main section[id]")),
   revealItems: Array.from(document.querySelectorAll(".reveal")),
+  parallaxItems: Array.from(document.querySelectorAll("[data-parallax]")),
   galleryItems: Array.from(document.querySelectorAll("[data-lightbox]")),
 };
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const formEndpoint =
   "https://script.google.com/macros/s/AKfycbwVzFXcpV9uyCKpou6NsSGhxzghe-C7b0_8LDg0K3h1UfC25gmU6eIEstm6LCXmoy5u/exec";
+const serviceActiveIds = new Set(["services", "competent-person"]);
+const clientLogos = [
+  {
+    name: "SMS group",
+    short: "SMS",
+    logoUrl: "static/images/partners/sms_group.svg",
+  },
+  {
+    name: "MP Birla Group",
+    short: "MPB",
+    logoUrl: "static/images/partners/birla.png",
+  },
+  {
+    name: "Tata Consumer Products",
+    short: "TCP",
+    logoUrl: "static/images/partners/tata_consumer_products.png",
+  },
+  {
+    name: "Tata Steel",
+    short: "TS",
+    logoUrl: "static/images/partners/tata_steel.png",
+  },
+  {
+    name: "NTPC",
+    short: "NTPC",
+    logoUrl: "static/images/partners/ntpc.png",
+  },
+  {
+    name: "United Breweries",
+    short: "UBL",
+    logoUrl: "static/images/partners/ub_united_breweries.png",
+  },
+  {
+    name: "Larsen & Toubro",
+    short: "L&T",
+    logoUrl: "static/images/partners/lnt.png",
+  },
+  {
+    name: "Britannia",
+    short: "BR",
+    logoUrl: "static/images/partners/Britannia.png",
+  },
+  {
+    name: "Carlsberg",
+    short: "CARL",
+    logoUrl: "static/images/partners/carlsberg.webp",
+  },
+  {
+    name: "IFGL Refractories",
+    short: "IFGL",
+    logoUrl: "static/images/partners/ifgl.png",
+  },
+  {
+    name: "Jayaswal Neco Industries",
+    short: "JN",
+    logoUrl: "static/images/partners/jayaswal.jpg",
+  },
+];
 
 function getHeaderOffset() {
   return (dom.header?.offsetHeight || 0) + 14;
@@ -43,6 +108,17 @@ function setMenuState(open) {
   dom.mainNav.classList.toggle("open", open);
   dom.menuToggle.classList.toggle("active", open);
   dom.menuToggle.setAttribute("aria-expanded", String(open));
+
+  if (!open) {
+    setServicesMenuState(false);
+  }
+}
+
+function setServicesMenuState(open) {
+  if (!dom.servicesDropdown || !dom.servicesMenuToggle) return;
+
+  dom.servicesDropdown.classList.toggle("open", open);
+  dom.servicesMenuToggle.setAttribute("aria-expanded", String(open));
 }
 
 function handleNavigation() {
@@ -55,6 +131,7 @@ function handleNavigation() {
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         setMenuState(false);
+        setServicesMenuState(false);
         closeLightbox();
       }
     });
@@ -68,6 +145,20 @@ function handleNavigation() {
     });
   }
 
+  dom.servicesMenuToggle?.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const next = !dom.servicesDropdown?.classList.contains("open");
+    setServicesMenuState(Boolean(next));
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Element)) return;
+    if (target.closest(".nav-dropdown")) return;
+    setServicesMenuState(false);
+  });
+
   document.querySelectorAll("a[href^='#']").forEach((link) => {
     link.addEventListener("click", (event) => {
       const href = link.getAttribute("href");
@@ -76,15 +167,24 @@ function handleNavigation() {
       event.preventDefault();
       smoothScrollToHash(href);
       setMenuState(false);
+      setServicesMenuState(false);
     });
   });
 }
 
 function updateScrollState() {
   const scrollY = window.scrollY;
+  const scrollHeight = Math.max(
+    document.documentElement.scrollHeight - window.innerHeight,
+    1,
+  );
+  const progress = Math.min(100, Math.max(0, (scrollY / scrollHeight) * 100));
 
   dom.header?.classList.toggle("scrolled", scrollY > 12);
   dom.backToTop?.classList.toggle("show", scrollY > 540);
+  if (dom.scrollProgress) {
+    dom.scrollProgress.style.width = `${progress}%`;
+  }
 
   let activeId = "";
   dom.sections.forEach((section) => {
@@ -97,6 +197,19 @@ function updateScrollState() {
   dom.navLinks.forEach((link) => {
     link.classList.toggle("active", link.getAttribute("href") === `#${activeId}`);
   });
+
+  dom.servicesMenuToggle?.classList.toggle(
+    "active",
+    serviceActiveIds.has(activeId),
+  );
+  dom.servicesMenuLink?.classList.toggle("active", serviceActiveIds.has(activeId));
+
+  if (!reduceMotion) {
+    dom.parallaxItems.forEach((item) => {
+      const speed = Number(item.getAttribute("data-parallax")) || 0;
+      item.style.setProperty("--parallax-shift", `${scrollY * speed}px`);
+    });
+  }
 }
 
 function setupRevealObserver() {
@@ -293,25 +406,76 @@ function setupBackToTop() {
   });
 }
 
+function renderClientLogos() {
+  if (!dom.clientLogoTrack) return;
+
+  const createMarkup = (duplicate = false) =>
+    clientLogos
+      .map(
+        (client, index) => `
+          <article class="client-logo-card${duplicate ? " is-duplicate" : ""}" ${
+            duplicate ? 'aria-hidden="true"' : ""
+          }>
+            <div class="client-logo-asset">
+              <img
+                class="client-logo-image"
+                src="${client.logoUrl}"
+                alt="${client.name} logo"
+                loading="lazy"
+                decoding="async"
+                referrerpolicy="no-referrer"
+                data-logo-index="${index}"
+              />
+              <span class="client-logo-fallback">${client.short}</span>
+            </div>
+            <p>${client.name}</p>
+          </article>
+        `,
+      )
+      .join("");
+
+  dom.clientLogoTrack.innerHTML = `${createMarkup(false)}${createMarkup(true)}`;
+
+  dom.clientLogoTrack.querySelectorAll(".client-logo-image").forEach((image) => {
+    const fallback = () => {
+      image.closest(".client-logo-card")?.classList.add("is-fallback");
+    };
+
+    image.addEventListener("error", fallback, { once: true });
+    if (image.complete && image.naturalWidth === 0) {
+      fallback();
+    }
+  });
+}
+
 function setYear() {
   if (dom.year) {
     dom.year.textContent = String(new Date().getFullYear());
   }
 }
 
+function setupMotionEnhancements() {
+  dom.revealItems.forEach((item, index) => {
+    item.style.setProperty("--reveal-delay", `${(index % 4) * 70}ms`);
+  });
+}
+
 function init() {
   setYear();
   handleNavigation();
+  setupMotionEnhancements();
   setupRevealObserver();
   validateContactForm();
   setupLightbox();
   setupBackToTop();
+  renderClientLogos();
   updateScrollState();
 
   window.addEventListener("scroll", updateScrollState, { passive: true });
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 1080) {
       setMenuState(false);
+      setServicesMenuState(false);
     }
     updateScrollState();
   });

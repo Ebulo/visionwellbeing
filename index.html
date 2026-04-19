@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vision Wellbeing | HSE Consulting &amp; Safety Training</title>
+    <title>
+      Vision Wellbeing | HSE Consulting, Competent Person Support &amp; Safety
+      Training
+    </title>
     <meta
       name="description"
-      content="Vision Wellbeing provides HSE consulting, safety audits, risk assessment, SOP development, compliance support and industrial safety training in India."
+      content="Vision Wellbeing provides HSE consulting, safety audits, risk assessment, SOP development, competent person inspection support, compliance support and industrial safety training in India."
     />
     <meta
       name="keywords"
-      content="HSE consulting, industrial safety, risk assessment, SOP design, compliance support, emergency readiness, Odisha"
+      content="HSE consulting, industrial safety, risk assessment, SOP design, competent person support, third party inspection, compliance support, emergency readiness, Odisha"
     />
     <meta
       name="robots"
@@ -26,11 +29,11 @@
     <meta property="og:site_name" content="Vision Wellbeing" />
     <meta
       property="og:title"
-      content="Vision Wellbeing | HSE Consulting &amp; Safety Training"
+      content="Vision Wellbeing | HSE Consulting, Competent Person Support &amp; Safety Training"
     />
     <meta
       property="og:description"
-      content="HSE consulting, safety audits, risk assessment, SOP development, compliance support and industrial safety training for high-risk operations."
+      content="HSE consulting, safety audits, risk assessment, SOP development, competent person inspection support, compliance support and industrial safety training for high-risk operations."
     />
     <meta property="og:url" content="https://visionwellbeing.co.in/" />
     <meta
@@ -45,11 +48,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Vision Wellbeing | HSE Consulting &amp; Safety Training"
+      content="Vision Wellbeing | HSE Consulting, Competent Person Support &amp; Safety Training"
     />
     <meta
       name="twitter:description"
-      content="Audit-ready HSE consulting, safety audits, risk assessment, SOP development and industrial safety training."
+      content="Audit-ready HSE consulting, safety audits, risk assessment, SOP development, competent person support and industrial safety training."
     />
     <meta
       name="twitter:image"
@@ -103,9 +106,9 @@
             "name": "Vision Well being",
             "url": "https://visionwellbeing.co.in/",
             "logo": "https://visionwellbeing.co.in/static/images/logos/logo.png",
-            "image": "https://visionwellbeing.co.in/sta tic/images/image1.png",
-            "description": "Vision Well being provides HSE consulting, safety audits, risk assessment, SOP development, compliance support and industrial safety training for industrial operations.",
-            "telephone": "+91 99999 99999",
+            "image": "https://visionwellbeing.co.in/static/images/image1.png",
+            "description": "Vision Well being provides HSE consulting, safety audits, risk assessment, SOP development, competent person inspection support, compliance support and industrial safety training for industrial operations.",
+            "telephone": "+91 7766915252",
             "email": "visionwellbeing2020@gmail.com",
             "areaServed": {
               "@type": "Country",
@@ -121,6 +124,7 @@
               "Safety Audits",
               "Risk Assessment",
               "SOP Development",
+              "Third Party Competent Person Support",
               "Compliance Support",
               "Industrial Safety Training"
             ]
@@ -170,10 +174,37 @@
           <span></span>
         </button>
 
-        <nav class="main-nav" id="mainNav" aria-label="Primary navigation", >
+        <nav class="main-nav" id="mainNav" aria-label="Primary navigation">
           <a href="#home">Home</a>
           <a href="#about">About</a>
-          <a href="#services">Services</a>
+          <div class="nav-dropdown" id="servicesDropdown">
+            <div class="nav-dropdown-head">
+              <a class="nav-dropdown-link" id="servicesMenuLink" href="#services"
+                >Services</a
+              >
+              <button
+                class="nav-dropdown-toggle"
+                id="servicesMenuToggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="servicesSubmenu"
+                aria-label="Toggle services submenu"
+              >
+                <span class="nav-caret" aria-hidden="true"></span>
+              </button>
+            </div>
+
+            <div class="nav-submenu" id="servicesSubmenu">
+              <a href="#services">All services</a>
+              <a href="#service-audits">Safety audits</a>
+              <a href="#service-risk">Risk engineering</a>
+              <a href="#service-sop">SOP development</a>
+              <a href="#service-emergency">Emergency readiness</a>
+              <a href="#service-compliance">Compliance support</a>
+              <a href="#service-training">Training systems</a>
+              <a href="#competent-person">Third-party competent person</a>
+            </div>
+          </div>
           <a href="#process">Process</a>
           <a href="#work">Work</a>
           <a href="#contact">Contact</a>
@@ -191,7 +222,10 @@
           <div class="hero-copy reveal">
             <p class="eyebrow">Precision-led </br>industrial safety consulting </br></br></p>
             <h1 class="hero-title">
-              Better aligned systems for safer, cleaner site execution.
+              Better aligned systems for
+              <span class="hero-title-emphasis"
+                >safer, cleaner site execution.</span
+              >
             </h1>
             <p class="hero-subtitle">
               Vision Well being helps industrial teams structure audits,
@@ -221,7 +255,7 @@
           </div>
 
           <div class="hero-visual reveal">
-            <figure class="hero-photo-card">
+            <figure class="hero-photo-card" data-parallax="0.14">
               <img
                 src="static/images/image1.png"
                 alt="Emergency response team performing a coordinated drill"
@@ -336,7 +370,10 @@
           </div>
 
           <div class="service-grid">
-            <article class="service-card service-card-wide reveal">
+            <article
+              class="service-card service-card-wide reveal"
+              id="service-audits"
+            >
               <p class="card-eyebrow">Safety audits</p>
               <h3>Operational reviews that surface gaps fast.</h3>
               <p>
@@ -350,7 +387,10 @@
               </div>
             </article>
 
-            <article class="service-card service-card-media reveal">
+            <article
+              class="service-card service-card-media reveal"
+              id="service-risk"
+            >
               <div class="service-media service-media-contain">
                 <img
                   src="static/images/risk_score.png"
@@ -367,7 +407,10 @@
               </div>
             </article>
 
-            <article class="service-card service-card-media reveal">
+            <article
+              class="service-card service-card-media reveal"
+              id="service-sop"
+            >
               <div class="service-media service-media-contain">
                 <img
                   src="static/images/sop.png"
@@ -384,7 +427,7 @@
               </div>
             </article>
 
-            <article class="service-card reveal">
+            <article class="service-card reveal" id="service-emergency">
               <p class="card-eyebrow">Emergency readiness</p>
               <h3>Drills, response planning, and command clarity.</h3>
               <p>
@@ -393,7 +436,10 @@
               </p>
             </article>
 
-            <article class="service-card service-card-media reveal">
+            <article
+              class="service-card service-card-media reveal"
+              id="service-compliance"
+            >
               <div class="service-media service-media-contain">
                 <img
                   src="static/images/regulatory_compliance.png"
@@ -410,7 +456,10 @@
               </div>
             </article>
 
-            <article class="service-card service-card-media reveal">
+            <article
+              class="service-card service-card-media reveal"
+              id="service-training"
+            >
               <div class="service-media">
                 <img
                   src="static/images/architecture_image.png"
@@ -425,6 +474,135 @@
                   paths for contractors and full-time teams.
                 </p>
               </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-cream competent-person" id="competent-person">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="section-label">Third-party competent person</p>
+            <h2 class="section-title">
+              Inspection support aligned to the Factories Act, 1948.
+            </h2>
+            <p class="section-text section-text-wide">
+              Vision Wellbeing supports third-party inspection readiness,
+              competent person engagement, verification documentation, and
+              certification-ready reporting for industrial assets and
+              high-risk operations.
+            </p>
+          </div>
+
+          <div class="competent-person-grid">
+            <div class="competent-person-copy reveal">
+              <div class="pill-row">
+                <span class="pill">Factories Act, 1948</span>
+                <span class="pill">Third-party inspections</span>
+                <span class="pill">Competent person coordination</span>
+                <span class="pill">Certification-ready records</span>
+              </div>
+
+              <p class="section-text">
+                Our role is to help sites prepare the equipment baseline,
+                inspection scope, records, and closure workflow needed for
+                third-party competent person review. This is especially useful
+                where plants need stronger evidence for lifting equipment,
+                pressure systems, and hazardous-process controls.
+              </p>
+
+              <div class="competent-person-points">
+                <article>
+                  <strong>Scope clarity</strong>
+                  <p>
+                    Asset listing, inspection planning, statutory records, and
+                    site-readiness checks before review.
+                  </p>
+                </article>
+                <article>
+                  <strong>Execution support</strong>
+                  <p>
+                    Coordination for third-party inspections, observation
+                    closure, documentation upgrades, and follow-through.
+                  </p>
+                </article>
+                <article>
+                  <strong>Evidence handover</strong>
+                  <p>
+                    Cleaner reports, traceable action items, and inspection
+                    files prepared for internal and regulatory reference.
+                  </p>
+                </article>
+              </div>
+            </div>
+
+            <article class="competent-person-visual reveal">
+              <div class="competent-person-art">
+                <img
+                  src="static/images/safety_inspection.png"
+                  alt="Safety inspection support for lifting tools, tackles, cranes, hoists and lifts under the Factories Act, 1948"
+                />
+                <div class="competent-person-art-badge">
+                  <strong>Load testing, rigging check, lift inspection</strong>
+                  <span>Inspection-ready support for competent person review</span>
+                </div>
+              </div>
+              <div class="competent-person-focus">
+                <span>Lifting tools, tackles, cranes, hoists and lifts</span>
+                <span>Pressure plant and pressure vessels</span>
+                <span>Dangerous operation review support</span>
+                <span>Site documentation before certification</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="inspection-grid">
+            <article class="inspection-card reveal">
+              <p class="inspection-card-title">Section 28: Hoists &amp; Lifts</p>
+              <p><strong>Covers:</strong> Hoists, lifts, EOT cranes.</p>
+              <p>
+                <strong>Objective:</strong> Prevent falling loads and
+                mechanical failure.
+              </p>
+            </article>
+
+            <article class="inspection-card reveal">
+              <p class="inspection-card-title">
+                Section 29: Lifting Machines, Chains, Ropes &amp; Tackles
+              </p>
+              <p>
+                <strong>Covers:</strong> Cranes, slings, chains, wire ropes,
+                hooks, winch.
+              </p>
+              <p>
+                <strong>Objective:</strong> Ensure safe lifting operations.
+              </p>
+            </article>
+
+            <article class="inspection-card reveal">
+              <p class="inspection-card-title">Section 31: Pressure Plant</p>
+              <p>
+                <strong>Covers:</strong> Pressure vessels, air receivers,
+                compressors.
+              </p>
+              <p>
+                <strong>Objective:</strong> Prevent explosions and pressure
+                hazards.
+              </p>
+            </article>
+
+            <article class="inspection-card reveal">
+              <p class="inspection-card-title">
+                Section 87: Dangerous Operations
+              </p>
+              <p>
+                <strong>Covers:</strong> Hazardous processes across chemical,
+                steel, and other high-risk industries.
+              </p>
+              <p>
+                <strong>Objective:</strong> Protect workers from occupational
+                disease and serious hazards.
+              </p>
             </article>
           </div>
         </div>
@@ -487,6 +665,26 @@
               <span>Compliance documentation support</span>
             </div>
           </article>
+        </div>
+      </section>
+
+      <section class="section clients" id="clients">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="section-label">Clients</p>
+            <h2 class="section-title">
+              Industrial teams and brands we have worked with.
+            </h2>
+            <p class="section-text section-text-wide">
+              Representative client portfolio across steel, power,
+              infrastructure, mining, cement, FMCG, metals, and heavy
+              manufacturing.
+            </p>
+          </div>
+
+          <div class="logo-marquee reveal" aria-label="Client logos">
+            <div class="logo-marquee-track" id="clientLogoTrack"></div>
+          </div>
         </div>
       </section>
 
@@ -578,6 +776,71 @@
               />
               <span>Compliance support</span>
             </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-cream learning" id="learning">
+        <div class="container learning-grid">
+          <div class="learning-copy reveal">
+            <p class="section-label">Learning &amp; Sharing</p>
+            <h2 class="section-title">
+              Knowledge sharing that stays active beyond the audit.
+            </h2>
+            <p class="section-text">
+              Vision Wellbeing keeps learning practical. We structure field
+              sessions, post-incident conversations, best-practice share-outs,
+              and supervisor coaching so safety communication keeps moving after
+              rollout.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Toolbox talks</span>
+              <span class="pill">Supervisor coaching</span>
+              <span class="pill">Case-study reviews</span>
+              <span class="pill">Cross-site knowledge loops</span>
+            </div>
+          </div>
+
+          <div class="learning-stack reveal">
+            <article class="learning-feature">
+              <p class="card-eyebrow">How it moves</p>
+              <h3>Structured learning for crews, vendors, and site leaders.</h3>
+              <p>
+                Each learning cycle is designed to convert site observations,
+                near misses, and operating changes into usable team knowledge.
+              </p>
+            </article>
+
+            <div class="learning-cards">
+              <article class="learning-card">
+                <strong>Toolbox refreshers</strong>
+                <p>
+                  Short, repeatable sessions for frontline hazard awareness and
+                  control discipline.
+                </p>
+              </article>
+              <article class="learning-card">
+                <strong>Incident learning</strong>
+                <p>
+                  Lessons learned, root-cause sharing, and corrective-action
+                  communication.
+                </p>
+              </article>
+              <article class="learning-card">
+                <strong>Leadership alignment</strong>
+                <p>
+                  Supervisor and contractor interfaces aligned around
+                  expectations, escalation, and closure.
+                </p>
+              </article>
+              <article class="learning-card">
+                <strong>Practice exchange</strong>
+                <p>
+                  Cross-functional sharing of effective methods, site examples,
+                  and implementation wins.
+                </p>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -691,7 +954,10 @@
           <h3>Navigation</h3>
           <a href="#about">About</a>
           <a href="#services">Services</a>
+          <a href="#competent-person">Competent Person</a>
           <a href="#process">Process</a>
+          <a href="#clients">Clients</a>
+          <a href="#learning">Learning</a>
           <a href="#work">Work</a>
         </div>
 
@@ -700,12 +966,13 @@
           <span>Safety audits</span>
           <span>Risk assessment</span>
           <span>SOP design</span>
+          <span>Third-party inspection support</span>
           <span>Compliance support</span>
         </div>
 
         <div>
           <h3>Contact</h3>
-          <a href="tel:+919999999999">+91 99999 99999</a>
+          <a href="tel:+917766915252">+91 7766915252</a>
           <a href="mailto:visionwellbeing2020@gmail.com"
             >visionwellbeing2020@gmail.com</a
           >
