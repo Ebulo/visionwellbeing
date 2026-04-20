@@ -355,6 +355,26 @@
         </div>
       </section>
 
+            <section class="section clients" id="clients">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="section-label">Clients</p>
+            <h2 class="section-title">
+              Industrial teams and brands we have worked with.
+            </h2>
+            <p class="section-text section-text-wide">
+              Representative client portfolio across steel, power,
+              infrastructure, mining, cement, FMCG, metals, and heavy
+              manufacturing.
+            </p>
+          </div>
+
+          <div class="logo-marquee reveal" aria-label="Client logos">
+            <div class="logo-marquee-track" id="clientLogoTrack"></div>
+          </div>
+        </div>
+      </section>
+
       <section class="section services" id="services">
         <div class="container">
           <div class="section-head reveal">
@@ -391,12 +411,12 @@
               class="service-card service-card-media reveal"
               id="service-risk"
             >
-              <div class="service-media service-media-contain">
+              <!-- <div class="service-media service-media-contain">
                 <img
                   src="static/images/risk_score.png"
                   alt="Risk score indicator"
                 />
-              </div>
+              </div> -->
               <div class="service-body">
                 <p class="card-eyebrow">Risk engineering</p>
                 <h3>Prioritize hazards before they scale.</h3>
@@ -411,12 +431,12 @@
               class="service-card service-card-media reveal"
               id="service-sop"
             >
-              <div class="service-media service-media-contain">
+              <!-- <div class="service-media service-media-contain">
                 <img
                   src="static/images/sop.png"
                   alt="Standard operating procedure illustration"
                 />
-              </div>
+              </div> -->
               <div class="service-body">
                 <p class="card-eyebrow">SOP development</p>
                 <h3>Documentation that operators can actually use.</h3>
@@ -440,12 +460,12 @@
               class="service-card service-card-media reveal"
               id="service-compliance"
             >
-              <div class="service-media service-media-contain">
+              <!-- <div class="service-media service-media-contain">
                 <img
                   src="static/images/regulatory_compliance.png"
                   alt="Regulatory compliance illustration"
                 />
-              </div>
+              </div> -->
               <div class="service-body">
                 <p class="card-eyebrow">Compliance support</p>
                 <h3>Regulatory alignment without visual noise.</h3>
@@ -668,26 +688,6 @@
         </div>
       </section>
 
-      <section class="section clients" id="clients">
-        <div class="container">
-          <div class="section-head reveal">
-            <p class="section-label">Clients</p>
-            <h2 class="section-title">
-              Industrial teams and brands we have worked with.
-            </h2>
-            <p class="section-text section-text-wide">
-              Representative client portfolio across steel, power,
-              infrastructure, mining, cement, FMCG, metals, and heavy
-              manufacturing.
-            </p>
-          </div>
-
-          <div class="logo-marquee reveal" aria-label="Client logos">
-            <div class="logo-marquee-track" id="clientLogoTrack"></div>
-          </div>
-        </div>
-      </section>
-
       <section class="section work" id="work">
         <div class="container">
           <div class="section-head reveal">
@@ -700,81 +700,133 @@
 
           <div class="gallery-grid">
             <button
+              class="gallery-item reveal"
+              type="button"
+              data-lightbox="static/images/gallery/0.jpeg"
+              data-caption="On-site work highlight from Vision Wellbeing field engagement"
+            >
+              <img
+                src="static/images/gallery/0.jpeg"
+                alt="Vision Wellbeing work highlight photograph 1"
+              />
+              <span>Field engagement</span>
+            </button>
+
+            <button
+              class="gallery-item reveal"
+              type="button"
+              data-lightbox="static/images/gallery/1.jpg"
+              data-caption="Work highlight from site activity and execution support"
+            >
+              <img
+                src="static/images/gallery/1.jpg"
+                alt="Vision Wellbeing work highlight photograph 2"
+              />
+              <span>Site execution</span>
+            </button>
+
+            <button
+              class="gallery-item reveal"
+              type="button"
+              data-lightbox="static/images/gallery/2.jpeg"
+              data-caption="Work highlight from an industrial safety support assignment"
+            >
+              <img
+                src="static/images/gallery/2.jpeg"
+                alt="Vision Wellbeing work highlight photograph 3"
+              />
+              <span>Safety support</span>
+            </button>
+
+            <button
+              class="gallery-item gallery-item-wide reveal"
+              type="button"
+              data-lightbox="static/images/gallery/3.jpeg"
+              data-caption="Operational planning and on-ground coordination highlight"
+            >
+              <img
+                src="static/images/gallery/3.jpeg"
+                alt="Vision Wellbeing work highlight photograph 4"
+              />
+              <span>Operational planning</span>
+            </button>
+
+            <button
+              class="gallery-item reveal"
+              type="button"
+              data-lightbox="static/images/gallery/4.jpeg"
+              data-caption="A field snapshot from ongoing HSE engagement and review"
+            >
+              <img
+                src="static/images/gallery/4.jpeg"
+                alt="Vision Wellbeing work highlight photograph 5"
+              />
+              <span>Site review</span>
+            </button>
+
+            <button
               class="gallery-item gallery-item-tall reveal"
               type="button"
-              data-lightbox="static/images/image1.png"
-              data-caption="Emergency response readiness and coordinated field execution"
+              data-lightbox="static/images/gallery/5.jpeg"
+              data-caption="Detailed field observation and safety oversight highlight"
             >
               <img
-                src="static/images/image1.png"
-                alt="Emergency response team at work"
+                src="static/images/gallery/5.jpeg"
+                alt="Vision Wellbeing work highlight photograph 6"
               />
-              <span>Emergency readiness</span>
+              <span>Field observation</span>
+            </button>
+
+            <button
+              class="gallery-item gallery-item-wide reveal"
+              type="button"
+              data-lightbox="static/images/gallery/6.jpeg"
+              data-caption="Readiness-focused support for active industrial operations"
+            >
+              <img
+                src="static/images/gallery/6.jpeg"
+                alt="Vision Wellbeing work highlight photograph 7"
+              />
+              <span>Operational readiness</span>
             </button>
 
             <button
               class="gallery-item reveal"
               type="button"
-              data-lightbox="static/images/hero_background.png"
-              data-caption="Blueprint-led planning for safer site operations"
+              data-lightbox="static/images/gallery/7.jpeg"
+              data-caption="Work highlight showing live industrial environment support"
             >
               <img
-                src="static/images/hero_background.png"
-                alt="Blueprint pattern representing planned systems"
+                src="static/images/gallery/7.jpeg"
+                alt="Vision Wellbeing work highlight photograph 8"
               />
-              <span>Blueprint planning</span>
+              <span>Industrial support</span>
+            </button>
+
+            <button
+              class="gallery-item gallery-item-tall reveal"
+              type="button"
+              data-lightbox="static/images/gallery/8.jpeg"
+              data-caption="Compliance-led site engagement and visual work highlight"
+            >
+              <img
+                src="static/images/gallery/8.jpeg"
+                alt="Vision Wellbeing work highlight photograph 9"
+              />
+              <span>Compliance review</span>
             </button>
 
             <button
               class="gallery-item reveal"
               type="button"
-              data-lightbox="static/images/architecture_image.png"
-              data-caption="Engineering structure and system thinking for HSE design"
+              data-lightbox="static/images/gallery/9.jpeg"
+              data-caption="Work highlight from a completed Vision Wellbeing engagement"
             >
               <img
-                src="static/images/architecture_image.png"
-                alt="Technical planning and engineering layout"
+                src="static/images/gallery/9.jpeg"
+                alt="Vision Wellbeing work highlight photograph 10"
               />
-              <span>System architecture</span>
-            </button>
-
-            <button
-              class="gallery-item gallery-item-contain reveal"
-              type="button"
-              data-lightbox="static/images/risk_score.png"
-              data-caption="Risk scoring and prioritization for targeted action"
-            >
-              <img
-                src="static/images/risk_score.png"
-                alt="Risk scoring graphic"
-              />
-              <span>Risk review</span>
-            </button>
-
-            <button
-              class="gallery-item gallery-item-contain reveal"
-              type="button"
-              data-lightbox="static/images/sop.png"
-              data-caption="Standard operating procedure design and rollout planning"
-            >
-              <img
-                src="static/images/sop.png"
-                alt="Standard operating procedure layout"
-              />
-              <span>SOP design</span>
-            </button>
-
-            <button
-              class="gallery-item gallery-item-contain reveal"
-              type="button"
-              data-lightbox="static/images/regulatory_compliance.png"
-              data-caption="Regulatory compliance support for audit-ready delivery"
-            >
-              <img
-                src="static/images/regulatory_compliance.png"
-                alt="Regulatory compliance illustration"
-              />
-              <span>Compliance support</span>
+              <span>Project highlight</span>
             </button>
           </div>
         </div>
