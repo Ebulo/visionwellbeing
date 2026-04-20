@@ -207,7 +207,7 @@ function updateScrollState() {
   if (!reduceMotion) {
     dom.parallaxItems.forEach((item) => {
       const speed = Number(item.getAttribute("data-parallax")) || 0;
-      item.style.setProperty("--parallax-shift", `${scrollY * speed}px`);
+      item.style.setProperty("--parallax-shift", `${scrollY * speed * 0.28}px`);
     });
   }
 }
@@ -456,7 +456,7 @@ function setYear() {
 
 function setupMotionEnhancements() {
   dom.revealItems.forEach((item, index) => {
-    item.style.setProperty("--reveal-delay", `${(index % 4) * 70}ms`);
+    item.style.setProperty("--reveal-delay", `${(index % 4) * 40}ms`);
   });
 }
 
