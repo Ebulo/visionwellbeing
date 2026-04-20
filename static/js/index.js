@@ -95,7 +95,10 @@ function smoothScrollToHash(hash) {
   const target = document.querySelector(hash);
   if (!target) return;
 
-  const top = Math.max(0, target.offsetTop - getHeaderOffset());
+  const top = Math.max(
+    0,
+    target.getBoundingClientRect().top + window.scrollY - getHeaderOffset(),
+  );
   window.scrollTo({
     top,
     behavior: reduceMotion ? "auto" : "smooth",
@@ -165,9 +168,11 @@ function handleNavigation() {
       if (!href || href === "#") return;
 
       event.preventDefault();
-      smoothScrollToHash(href);
       setMenuState(false);
       setServicesMenuState(false);
+      window.requestAnimationFrame(() => {
+        smoothScrollToHash(href);
+      });
     });
   });
 }
