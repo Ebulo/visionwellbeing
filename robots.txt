@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vissionwellbeing.com/sitemap.xml
+Sitemap: https://visionwellbeing.co.in/sitemap.xml

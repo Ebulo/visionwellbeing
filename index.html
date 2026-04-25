@@ -153,12 +153,6 @@
             src="static/images/logos/logo.png"
             alt="Vision Well being logo"
           />
-          <!-- <span class="brand-copy">
-            <span class="brand-title">
-              <span class="brand-title-blue">Vision</span>
-              <span class="brand-title-green">Well being</span>
-            </span>
-          </span> -->
         </a>
 
         <button
@@ -180,34 +174,35 @@
           <div class="nav-dropdown" id="servicesDropdown">
             <div class="nav-dropdown-head">
               <a class="nav-dropdown-link" id="servicesMenuLink" href="#services"
-                >Services</a
+              >Services</a
               >
               <button
-                class="nav-dropdown-toggle"
-                id="servicesMenuToggle"
-                type="button"
-                aria-expanded="false"
-                aria-controls="servicesSubmenu"
-                aria-label="Toggle services submenu"
+              class="nav-dropdown-toggle"
+              id="servicesMenuToggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="servicesSubmenu"
+              aria-label="Toggle services submenu"
               >
-                <span class="nav-caret" aria-hidden="true"></span>
-              </button>
-            </div>
-
-            <div class="nav-submenu" id="servicesSubmenu">
-              <a href="#services">All services</a>
-              <a href="#service-audits">Safety audits</a>
-              <a href="#service-risk">Risk engineering</a>
-              <a href="#service-sop">SOP development</a>
-              <a href="#service-emergency">Emergency readiness</a>
-              <a href="#service-compliance">Compliance support</a>
-              <a href="#service-training">Training systems</a>
-              <a href="#competent-person">Third-party competent person</a>
-            </div>
+              <span class="nav-caret" aria-hidden="true"></span>
+            </button>
           </div>
-          <a href="#process">Process</a>
-          <a href="#work">Work</a>
-          <a href="#contact">Contact</a>
+
+          <div class="nav-submenu" id="servicesSubmenu">
+            <a href="#services">All services</a>
+            <a href="#competent-person">Third-party competent person</a>
+            <a href="#service-audits">Safety audits</a>
+            <a href="#service-emergency">Emergency readiness</a>
+            <a href="#manpower">Trained manpower supply</a>
+            <a href="#service-risk">Risk engineering</a>
+            <a href="#service-sop">SOP development</a>
+            <a href="#service-compliance">Compliance support</a>
+            <a href="#service-training">Training systems</a>
+          </div>
+        </div>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+        <a href="#work" style="background: #007bff; color: white; ">View Gallery</a>
         </nav>
       </div>
     </header>
@@ -238,7 +233,7 @@
               <a class="btn btn-secondary" href="#work">View Work</a>
             </div>
 
-            <div class="hero-metrics">
+            <div class="hero-metrics" style="margin-bottom: 40px;">
               <article>
                 <strong>200+</strong>
                 <span>Safety professionals</span>
@@ -496,6 +491,73 @@
               </div>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section class="section section-cream manpower" id="manpower">
+        <div class="container manpower-grid">
+          <div class="manpower-copy">
+            <div class="section-head reveal">
+              <p class="section-label">Trained manpower supply</p>
+              <h2 class="section-title">
+                Qualified safety and fire-response staff for live industrial
+                operations.
+              </h2>
+              <p class="section-text section-text-wide">
+                We provide qualified PDIS and trained safety professionals for
+                steward, executive, and officer roles, along with trained
+                firemen, fire supervisors, and fire officers for day-to-day site
+                safety coverage.
+              </p>
+            </div>
+
+            <div class="manpower-points">
+              <article class="reveal">
+                <strong>Flexible deployment</strong>
+                <p>
+                  Teams can be placed directly under client roles or managed
+                  under our supervision based on site demand.
+                </p>
+              </article>
+              <article class="reveal">
+                <strong>Safety staffing</strong>
+                <p>
+                  Practical manpower support for inspections, shift coverage,
+                  observation rounds, and routine control checks.
+                </p>
+              </article>
+              <article class="reveal">
+                <strong>Fire protection support</strong>
+                <p>
+                  Trained fire crews help monitor, maintain, and operate fire
+                  fighting systems with stronger emergency readiness.
+                </p>
+              </article>
+              <article class="reveal">
+                <strong>Regular onsite drills</strong>
+                <p>
+                  Refresher training and mock drills keep employees prepared for
+                  emergency situations, not just documentation reviews.
+                </p>
+              </article>
+            </div>
+
+            <div class="pill-row reveal">
+              <span class="pill">PDIS-qualified professionals</span>
+              <span class="pill">Safety stewards and officers</span>
+              <span class="pill">Firemen and supervisors</span>
+              <span class="pill">Onsite drill support</span>
+            </div>
+          </div>
+
+          <figure class="manpower-media reveal">
+            <img
+              src="static/images/trained_man_power_supply.jpg"
+              alt="Trained safety and fire response manpower support"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
         </div>
       </section>
 
@@ -983,46 +1045,33 @@
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand-block">
-          <a class="brand brand-footer" href="#home">
-            <img
-              class="brand-logo"
-              src="static/images/logos/logo.png"
-              alt="Vision Well being logo"
-            />
-            <span class="brand-copy">
-              <span class="brand-title">
-                <span class="brand-title-blue">Vision</span>
-                <span class="brand-title-green">Well being</span>
-              </span>
+          <a class="brand brand-footer footer-brand-mark" href="#home">
+            <span class="footer-logo-badge">
+              <img
+                class="brand-logo"
+                src="static/images/logos/logo.png"
+                alt="Vision Well being logo"
+              />
             </span>
           </a>
           <p>
-            Clearer systems, tighter layout, and stronger industrial HSE
-            communication across every section.
+            Industrial HSE consulting, trained manpower support, and emergency
+            readiness for high-risk operations.
           </p>
         </div>
 
-        <div>
-          <h3>Navigation</h3>
+        <div class="footer-links">
+          <h3>Explore</h3>
           <a href="#about">About</a>
           <a href="#services">Services</a>
+          <a href="#manpower">Manpower Supply</a>
           <a href="#competent-person">Competent Person</a>
           <a href="#process">Process</a>
-          <a href="#clients">Clients</a>
-          <a href="#learning">Learning</a>
-          <a href="#work">Work</a>
+          <a href="#work">Gallery</a>
+          <a href="#contact">Contact</a>
         </div>
 
-        <div>
-          <h3>Capabilities</h3>
-          <span>Safety audits</span>
-          <span>Risk assessment</span>
-          <span>SOP design</span>
-          <span>Third-party inspection support</span>
-          <span>Compliance support</span>
-        </div>
-
-        <div>
+        <div class="footer-contact">
           <h3>Contact</h3>
           <a href="tel:+917766915252">+91 7766915252</a>
           <a href="mailto:visionwellbeing2020@gmail.com"
@@ -1046,7 +1095,16 @@
       type="button"
       aria-label="Back to top"
     >
-      Top
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path
+          d="M12 19V5M12 5l-6 6M12 5l6 6"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2.25"
+        />
+      </svg>
     </button>
 
     <div class="lightbox" id="lightbox" aria-hidden="true">

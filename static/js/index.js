@@ -27,7 +27,7 @@ const dom = {
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const formEndpoint =
   "https://script.google.com/macros/s/AKfycbwVzFXcpV9uyCKpou6NsSGhxzghe-C7b0_8LDg0K3h1UfC25gmU6eIEstm6LCXmoy5u/exec";
-const serviceActiveIds = new Set(["services", "competent-person"]);
+const serviceActiveIds = new Set(["services", "manpower", "competent-person"]);
 const clientLogos = [
   {
     name: "SMS group",
