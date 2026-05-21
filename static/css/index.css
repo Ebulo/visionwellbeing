@@ -713,6 +713,534 @@ footer {
   width: 100%;
 }
 
+.safe-drive-section {
+  background:
+    linear-gradient(135deg, rgba(23, 56, 91, 0.97), rgba(11, 28, 47, 0.98)),
+    var(--surface-dark);
+  color: #fff;
+}
+
+.safe-drive-grid,
+.safe-drive-hero-grid,
+.app-download-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.safe-drive-section .section-title,
+.safe-drive-section .section-text {
+  color: #fff;
+}
+
+.safe-drive-section .section-text {
+  color: rgba(237, 243, 249, 0.78);
+}
+
+.safe-drive-actions {
+  margin-top: 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.safe-drive-preview,
+.safe-drive-device {
+  display: flex;
+  justify-content: center;
+}
+
+.safe-screen-stack {
+  width: min(100%, 34rem);
+  min-height: 38rem;
+  position: relative;
+}
+
+.safe-screen-stack-hero {
+  min-height: 42rem;
+}
+
+.safe-screen-stack-compact {
+  min-height: 34rem;
+}
+
+.safe-screen-card {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  background: #fff;
+  box-shadow: 0 28px 70px rgba(8, 20, 34, 0.22);
+}
+
+.safe-screen-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.safe-screen-card-main {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  width: 58%;
+  aspect-ratio: 390 / 844;
+}
+
+.safe-screen-card-float {
+  position: absolute;
+  right: 0;
+  top: 5.5rem;
+  width: 54%;
+  aspect-ratio: 390 / 844;
+  transform: rotate(3deg);
+}
+
+.safe-screen-card-alert {
+  position: absolute;
+  left: 0;
+  bottom: 0.8rem;
+  width: 42%;
+  aspect-ratio: 390 / 844;
+  transform: rotate(-5deg);
+  box-shadow: 0 22px 52px rgba(234, 88, 12, 0.22);
+}
+
+.safe-screen-stack-compact .safe-screen-card-main {
+  left: 6%;
+  width: 54%;
+}
+
+.safe-screen-stack-compact .safe-screen-card-float {
+  top: 3rem;
+  width: 50%;
+}
+
+.app-phone {
+  width: min(100%, 24rem);
+  min-height: 31rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 2.2rem;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.94),
+      rgba(246, 248, 252, 0.9)
+    ),
+    #fff;
+  color: var(--heading);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+}
+
+.app-phone::before {
+  content: "";
+  position: absolute;
+  top: 0.7rem;
+  left: 50%;
+  width: 5.6rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.16);
+  transform: translateX(-50%);
+}
+
+.app-phone-large {
+  width: min(100%, 25rem);
+  min-height: 35rem;
+}
+
+.app-phone-top {
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.app-phone-top img {
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 1.1rem;
+  background: #111827;
+  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.14);
+}
+
+.app-phone-top span,
+.ride-status-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.app-phone-top strong,
+.ride-status-card strong {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--heading);
+  font-family: Sora, Manrope, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.app-speedometer {
+  width: 100%;
+  margin: 2rem 0 1.1rem;
+}
+
+.app-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.app-stat-grid span,
+.safe-feature-card,
+.download-card,
+.ride-status-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.app-stat-grid span {
+  min-height: 4.25rem;
+  padding: 0.8rem;
+  display: grid;
+  place-items: center;
+  color: var(--heading);
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.safe-drive-hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: calc(var(--header-h) + 4rem) 0 4rem;
+  display: grid;
+  align-items: center;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.86),
+      rgba(241, 245, 249, 0.74)
+    ),
+    var(--page-bg-alt);
+}
+
+.safe-drive-page .hero-title {
+  max-width: 13ch;
+}
+
+.download-note {
+  max-width: 38rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.ride-status-card {
+  padding: 1rem;
+}
+
+.app-bike {
+  width: min(70%, 12rem);
+  margin: 1.1rem auto 0;
+}
+
+.safe-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: 1rem;
+}
+
+.safe-feature-card {
+  padding: 1.35rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.safe-feature-card span {
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.safe-feature-card h3 {
+  margin: 0.55rem 0 0.6rem;
+  color: var(--heading);
+  font-size: 1.08rem;
+  line-height: 1.25;
+}
+
+.safe-feature-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.safe-screens-showcase {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(241, 245, 249, 0.9)
+    ),
+    #fff;
+}
+
+.screen-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.screen-gallery-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-md);
+}
+
+.screen-gallery-card img {
+  width: 100%;
+  aspect-ratio: 390 / 844;
+  object-fit: cover;
+  object-position: top center;
+  background: var(--page-bg-alt);
+}
+
+.screen-gallery-card div {
+  padding: 1rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.screen-gallery-card span {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.screen-gallery-card strong {
+  color: var(--heading);
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+.app-download-panel {
+  background: #fff;
+}
+
+.download-card {
+  padding: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+.download-card img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  background: var(--page-bg-alt);
+}
+
+.download-card div {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.download-card strong {
+  color: var(--heading);
+  font-family: Sora, Manrope, sans-serif;
+}
+
+.download-card span {
+  color: var(--muted);
+}
+
+.safe-drive-page .safe-drive-hero {
+  min-height: auto;
+  padding: calc(var(--header-h) + 6rem) 0 6rem;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(246, 248, 252, 0.92)
+    ),
+    var(--page-bg);
+}
+
+.safe-drive-page .safe-drive-hero-grid {
+  gap: clamp(2rem, 6vw, 5rem);
+}
+
+.safe-drive-page .hero-title {
+  max-width: 12ch;
+  font-size: clamp(1.55rem, 6.4vw, 3.3rem);
+  line-height: 0.98;
+}
+
+.safe-drive-page .hero-subtitle {
+  max-width: 42rem;
+}
+
+.safe-phone-frame {
+  width: min(100%, 21rem);
+  margin: 0;
+  padding: 0.55rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #fff;
+  box-shadow:
+    0 28px 80px rgba(15, 23, 42, 0.14),
+    0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.safe-phone-frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 390 / 844;
+  border-radius: 1.45rem;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.safe-phone-frame-hero {
+  width: min(100%, 23rem);
+}
+
+.safe-phone-frame-small {
+  width: min(100%, 19rem);
+}
+
+.safe-feature-grid-minimal {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 1.35rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: var(--shadow-sm);
+}
+
+.safe-feature-grid-minimal .safe-feature-card {
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: 1.35rem;
+}
+
+.safe-feature-grid-minimal .safe-feature-card:nth-child(4n) {
+  border-right: 0;
+}
+
+.safe-feature-grid-minimal .safe-feature-card h3 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.safe-feature-grid-minimal .safe-feature-card p {
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.screen-gallery-minimal {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.screen-gallery-minimal .screen-gallery-card {
+  border-radius: 1rem;
+  box-shadow: none;
+  background: #fff;
+}
+
+.screen-gallery-minimal .screen-gallery-card img {
+  aspect-ratio: 390 / 760;
+}
+
+.screen-gallery-minimal .screen-gallery-card div {
+  padding: 0.8rem 0.85rem;
+}
+
+.screen-gallery-minimal .screen-gallery-card span {
+  color: var(--heading);
+  font-size: 0.72rem;
+}
+
+.app-download-minimal {
+  width: min(52rem, calc(100% - 1rem));
+  margin-inline: auto;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  background: #fff;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.app-download-minimal .section-title,
+.app-download-minimal .section-text {
+  margin-inline: auto;
+}
+
+.app-download-minimal .safe-drive-actions {
+  justify-content: center;
+}
+
+.install-steps {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  overflow: hidden;
+  text-align: left;
+}
+
+.install-steps article {
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 0.85rem;
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(248, 250, 252, 0.72);
+}
+
+.install-steps article:last-child {
+  border-bottom: 0;
+}
+
+.install-steps span {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.install-steps p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.install-steps strong {
+  color: var(--heading);
+}
+
 .hero-metrics {
   margin-top: 6rem;
   display: grid;
@@ -1725,11 +2253,7 @@ footer {
 
 .manpower {
   background:
-    radial-gradient(
-      circle at 100% 0%,
-      rgba(23, 56, 91, 0.06),
-      transparent 28%
-    ),
+    radial-gradient(circle at 100% 0%, rgba(23, 56, 91, 0.06), transparent 28%),
     linear-gradient(180deg, rgba(248, 250, 252, 0.96), rgba(255, 255, 255, 1));
 }
 
@@ -1758,7 +2282,11 @@ footer {
   border-radius: 1.35rem;
   border: 1px solid rgba(23, 56, 91, 0.1);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(245, 248, 251, 0.9)),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.88),
+      rgba(245, 248, 251, 0.9)
+    ),
     rgba(255, 255, 255, 0.92);
   box-shadow: 0 16px 36px rgba(21, 34, 48, 0.08);
 }
@@ -2018,7 +2546,10 @@ footer {
   .process-grid,
   .competent-person-grid,
   .learning-grid,
-  .manpower-grid {
+  .manpower-grid,
+  .safe-drive-grid,
+  .safe-drive-hero-grid,
+  .app-download-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 
@@ -2377,7 +2908,8 @@ footer {
   .hero-actions,
   .pill-row,
   .tag-row,
-  .process-checklist {
+  .process-checklist,
+  .safe-drive-actions {
     gap: 0.6rem;
   }
 
@@ -2445,6 +2977,89 @@ footer {
 
   .process-step {
     grid-template-columns: 1fr;
+  }
+
+  .safe-drive-hero {
+    padding-top: calc(var(--header-h) + 2rem);
+  }
+
+  .app-phone,
+  .app-phone-large {
+    min-height: auto;
+    border-radius: 1.45rem;
+  }
+
+  .app-stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .safe-screen-stack,
+  .safe-screen-stack-hero,
+  .safe-screen-stack-compact {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .safe-screen-card-main,
+  .safe-screen-card-float,
+  .safe-screen-card-alert,
+  .safe-screen-stack-compact .safe-screen-card-main,
+  .safe-screen-stack-compact .safe-screen-card-float {
+    position: relative;
+    inset: auto;
+    width: min(100%, 18rem);
+    margin-inline: auto;
+    transform: none;
+  }
+
+  .safe-screen-card-float,
+  .safe-screen-card-alert {
+    display: none;
+  }
+
+  .screen-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .safe-drive-page .safe-drive-hero {
+    padding-top: calc(var(--header-h) + 2rem);
+    padding-bottom: 3rem;
+  }
+
+  .safe-drive-page .hero-title {
+    font-size: clamp(2.15rem, 10vw, 3rem);
+  }
+
+  .safe-feature-grid-minimal {
+    border-radius: 1rem;
+  }
+
+  .safe-feature-grid-minimal .safe-feature-card {
+    border-right: 0;
+  }
+
+  .screen-gallery-minimal {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 0.75rem;
+    scroll-snap-type: x mandatory;
+  }
+
+  .screen-gallery-minimal .screen-gallery-card {
+    min-width: 13.5rem;
+    scroll-snap-align: start;
+  }
+
+  .app-download-minimal {
+    width: min(100% - 1rem, 52rem);
+    padding: 1.25rem;
+    text-align: left;
+  }
+
+  .app-download-minimal .safe-drive-actions {
+    justify-content: flex-start;
   }
 }
 
